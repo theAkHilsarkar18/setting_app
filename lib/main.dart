@@ -12,7 +12,7 @@ void main()
         ChangeNotifierProvider(create: (context) => Homeprovider(),),
       ],
       child: MaterialApp(
-        debugShowCheckedModeBanner: true,
+        debugShowCheckedModeBanner: false,
         routes: {
           '/' : (context) => Homescreen(),
         },

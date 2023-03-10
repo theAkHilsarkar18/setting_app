@@ -21,8 +21,10 @@ class _HomescreenState extends State<Homescreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          leading: Icon(Icons.all_inclusive,size: 30),
           title:
               Text("Settings UI", style: GoogleFonts.aBeeZee(letterSpacing: 2)),
+
           backgroundColor: Colors.cyan,
         ),
         body: Column(
@@ -36,7 +38,7 @@ class _HomescreenState extends State<Homescreen> {
                     "Common",
                     style: TextStyle(
                         color: Colors.cyan.shade700,
-                        fontWeight: FontWeight.bold),
+                        fontWeight: FontWeight.bold,letterSpacing: 1),
                   )),
             ),
             ListTile(
@@ -57,8 +59,8 @@ class _HomescreenState extends State<Homescreen> {
                   alignment: Alignment.topLeft,
                   child: Text(
                     "Account",
-                    style: TextStyle(
-                        color: Colors.red, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.raleway(
+                        color: Colors.cyan.shade700, fontWeight: FontWeight.bold),
                   )),
             ),
             SizedBox(height: 10),
@@ -80,19 +82,28 @@ class _HomescreenState extends State<Homescreen> {
                   alignment: Alignment.topLeft,
                   child: Text(
                     "Security",
-                    style: TextStyle(
-                        color: Colors.red, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.raleway(
+                        color: Colors.cyan.shade700, fontWeight: FontWeight.bold,letterSpacing: 1),
                   )),
             ),
             SizedBox(height: 10),
             ListTile(
                 leading: Icon(Icons.phonelink_lock),
-                title: Text("Lock app in background")),
+
+                title: Text("Lock app in background"),
+              trailing: Switch(
+                activeColor: Colors.cyan.shade700,
+                value: homeproviderTrue!.onOff3,
+                onChanged: (value) => homeprovider!.onClick3(value),
+              ),
+            ),
+
             SizedBox(height: 10),
             ListTile(
                 leading: Icon(Icons.fingerprint),
                 title: Text("Use fingerprint"),
               trailing: Switch(
+                activeColor: Colors.cyan.shade700,
                 value: homeproviderTrue!.onOff,
                 onChanged: (value) => homeprovider!.onClick(value),
               ),
@@ -102,8 +113,9 @@ class _HomescreenState extends State<Homescreen> {
               leading: Icon(Icons.lock),
               title: Text("Change password"),
               trailing: Switch(
-                value: homeproviderTrue!.onOff,
-                onChanged: (value) => homeprovider!.onClick(value),
+                activeColor: Colors.cyan.shade700,
+                value: homeproviderTrue!.onOff2,
+                onChanged: (value) => homeprovider!.onClick2(value),
               ),
             ),
             SizedBox(height: 10),
@@ -114,7 +126,7 @@ class _HomescreenState extends State<Homescreen> {
                   child: Text(
                     "Misc",
                     style: TextStyle(
-                        color: Colors.red, fontWeight: FontWeight.bold),
+                        color: Colors.cyan.shade700, fontWeight: FontWeight.bold,letterSpacing: 1),
                   )),
             ),
           ],
