@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class iOSscreen extends StatefulWidget {
@@ -14,37 +15,283 @@ class _iOSscreenState extends State<iOSscreen> {
     return SafeArea(
       child: CupertinoPageScaffold(
         navigationBar: CupertinoNavigationBar(
-          backgroundColor: Color(0xffD72323),
-          middle: Text("Setting UI",style: GoogleFonts.lato(color: Color(0xffFDFAF6),letterSpacing: 1),),
-        ),
+            middle: Text(
+              "Settings UI",
+              style: TextStyle(color: CupertinoColors.white),
+            ),
+            backgroundColor: CupertinoColors.systemRed),
         child: Column(
           children: [
-            SizedBox(height: 10),
-            CupertinoListTile(
-              leading: Icon(CupertinoIcons.number),
-              title: Row(
+            SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Language",style: GoogleFonts.lato(letterSpacing: 1)),
-                  Spacer(),
-                  Text("English",style: GoogleFonts.lato(color: Color(0xff000001),letterSpacing: 1,fontSize: 12)),
-                  SizedBox(width: 5,),
-                  Icon(CupertinoIcons.arrowtriangle_right,size: 15,),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Common",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: CupertinoColors.darkBackgroundGray),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Row(
+                                children: [
+                                  Icon(Icons.language,
+                                      color: CupertinoColors.black, size: 20),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    "Language",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Text("English"),
+                                  Icon(Icons.arrow_forward_ios_outlined,
+                                      color: CupertinoColors.black, size: 15),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: Row(
+                          children: [
+                            SizedBox(width: 10),
+                            Icon(Icons.cloud_outlined,
+                                color: CupertinoColors.black, size: 20),
+                            SizedBox(width: 20),
+                            Text(
+                              "environment",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                            Spacer(),
+                            Text("production"),
+                            Icon(Icons.navigate_next,color: Colors.black),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 15),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Account",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.black),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: Row(
+                          children: [
+                            SizedBox(width: 10),
+                            Icon(Icons.call, color: Colors.black45, size: 20),
+                            SizedBox(width: 20),
+                            Text(
+                              "Phone Number",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        decoration: BoxDecoration(),
+                        child: Row(
+                          children: [
+                            SizedBox(width: 10),
+                            Icon(Icons.email, color: Colors.black45, size: 20),
+                            SizedBox(width: 20),
+                            Text(
+                              "email",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: Row(
+                          children: [
+                            SizedBox(width: 10),
+                            Icon(Icons.logout, color: Colors.black45, size: 20),
+                            SizedBox(width: 20),
+                            Text(
+                              "Sign out",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 15),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 15),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Security",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.black),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SizedBox(width: 10),
+                                Icon(Icons.phone_android,
+                                    color: Colors.black45, size: 20),
+                                SizedBox(width: 20),
+                                Text(
+                                  "Lock App In Background",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                ),
+                              ],
+                            ),
+                            
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 15),
+                  Row(
+                    children: [
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Misc",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.black),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SizedBox(width: 10),
+                                Icon(Icons.description,
+                                    color: Colors.black45, size: 20),
+                                SizedBox(width: 20),
+                                Text(
+                                  "Terms Of Service",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.arrow_forward_ios_outlined,
+                                    color: Colors.black45, size: 20)
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        height: 50,
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                SizedBox(width: 10),
+                                Icon(Icons.tab_rounded,
+                                    color: Colors.black45, size: 20),
+                                SizedBox(width: 20),
+                                Text(
+                                  "Change Password",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.arrow_forward_ios_outlined,
+                                    color: Colors.black45, size: 20)
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
-            CupertinoListTile(
-              leading: Icon(CupertinoIcons.number),
-              title: Row(
-                children: [
-                  Text("Environment",style: GoogleFonts.lato(letterSpacing: 1)),
-                  Spacer(),
-                  Text("Production",style: GoogleFonts.lato(color: Color(0xff000001),letterSpacing: 1,fontSize: 12)),
-                  SizedBox(width: 5,),
-                  Icon(CupertinoIcons.cloud,size: 15,),
-                ],
-              ),
-            ),
-            SizedBox(height: 10),
           ],
         ),
       ),

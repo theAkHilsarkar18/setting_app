@@ -1,4 +1,5 @@
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:setting_app/screens/home/provider/homeprovider.dart';
@@ -12,7 +13,7 @@ void main()
       providers: [
         ChangeNotifierProvider(create: (context) => Homeprovider(),),
       ],
-      child: MaterialApp(
+      child: CupertinoApp(
         debugShowCheckedModeBanner: false,
         routes: {
           '/' : (context) => iOSscreen(),
